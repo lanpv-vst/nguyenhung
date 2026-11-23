@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1565c0">
+<title>Kho hàng</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: #f2f4f7; font-family: system-ui, sans-serif; color: #333; text-align: center; }
+  a { display: inline-block; margin-top: 12px; background: #1565c0; color: #fff; text-decoration: none;
+    padding: 12px 22px; border-radius: 24px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div>
+  <div>Đang mở ứng dụng Kho hàng…</div>
+  <a id="open" href="https://script.google.com/macros/s/AKfycbyMLMiFKpX53lpGvi47vPFjGaDWhqDRpvqwv9AtLABEOTpJ-oI0ouWSNeWV8vo9YVK8/exec">Mở ứng dụng</a>
+</div>
+<script>
+// Chuyển thẳng sang ứng dụng (không nhúng iframe): ứng dụng cần đăng nhập Google,
+// mà trình duyệt chặn đăng nhập Google trong khung của trang khác (lỗi 401).
+(function () {
+  var APP = 'https://script.google.com/macros/s/AKfycbyMLMiFKpX53lpGvi47vPFjGaDWhqDRpvqwv9AtLABEOTpJ-oI0ouWSNeWV8vo9YVK8/exec';
+  var url = APP + (window.location.search || '');
+  document.getElementById('open').href = url;
+  window.location.replace(url);
+})();
+</script>
+</body>
+</html>
